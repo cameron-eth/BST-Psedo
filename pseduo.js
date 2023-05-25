@@ -5,12 +5,22 @@ const { BinarySearchTree, TreeNode } = require('./binary-search-tree.js');
 // Practice problems on binary trees
 
 function findMinBST (rootNode) {
-  // Your code here
+  let current = this.rootNode
+  //while there is a value to our left
+  while(current.left !== null){
+    //we reassign current to = current.left, knowing that the tree is in order
+    current = current.left
 }
+  return current.value
+  //at which we no longer havea value to the left, we return the updated current val, which represents our lowest value.
 
 function findMaxBST (rootNode) {
-  // Your code here
+  let current = this.rootNode
+  
+  while(current.right !== null){
+    current = current.right
 }
+  return current.value
 
 function findMinBT (rootNode) {
   // Your code here
@@ -29,8 +39,17 @@ function balancedTree (rootNode) {
 }
 
 function countNodes (rootNode) {
-  // Your code here
-}
+    let current = this.rootnode
+    let count = 0
+    while(current.right){
+      current = current.right
+      count++
+  }
+  if(current.left){
+    current = current.left
+    count++
+  }
+  return count
 
 function getParentNode (rootNode, target) {
   // Your code here
